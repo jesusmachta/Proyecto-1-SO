@@ -4,10 +4,7 @@
  */
 package Clases;
 
-import Functions.Functions;
 import Interfaces.MainI;
-
-
 import javax.swing.JFrame;
 
 /**
