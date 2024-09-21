@@ -4,6 +4,12 @@
  */
 package Clases;
 
+import Functions.Functions;
+import Interfaces.MainI;
+
+
+import javax.swing.JFrame;
+
 /**
  *
  * @author andres
@@ -14,8 +20,11 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        MainI Main = new MainI();
+        Main.setVisible(true);
       
-        // TODO code application logic here
+// TODO code application logic here
         
         
     }
