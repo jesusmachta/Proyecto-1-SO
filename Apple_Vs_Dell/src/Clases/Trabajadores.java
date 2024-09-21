@@ -4,40 +4,121 @@
  */
 package Clases;
 
+import static java.lang.Thread.sleep;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.concurrent.Semaphore;
+
 /**
  *
  * @author andres
  */
-public class Trabajadores {
+public class Trabajadores extends Thread{
     
-    public int cantidad_trabajadores ;
-    public int sueldo_pb;
-    public int sueldo_cpu;
-    public int sueldo_mram;
-    public int sueldo_fa;
-    public int sueldo_tg;
-    public int sueldo_ensamblador;
-    public int sueldo_pm;
-    public int sueldo_d;
+    public int cantidadTrabajadores;
+    private int diaDuracion;
+    private int salario;
+    private float salarioAcumulado;
+    private int contadorDias;
+    private int diasTerminar;
+    private Almacen almacen;
+    private Semaphore mutex;
+    private int type;
     
     
-    public Trabajadores(){
-        this.cantidad_trabajadores = 12;
-        //ultimo número 0 del carnet
-        this.sueldo_pb = 20;
-        //sueldo de los productores de placas base
-        this.sueldo_cpu = 26;
-        //sueldo de los productores de cpu
-        this.sueldo_mram = 40;
-        //sueldo de los productores de memoria ram
-        this.sueldo_fa = 16;
-        //sueldo de los productores de fuentes de alimentación
-        this.sueldo_tg = 34;
-        //sueldo de los productores de tajetas gráficas
-        this.sueldo_ensamblador = 50;
-        //sueldo de los ensambladores
-        this.sueldo_pm = 40;
-        this.sueldo_d = 60;
+    public Trabajadores(int type, int diaDuracion, int cantidad, Almacen almacen, Semaphore mutex, int [] diasTerminar){
+        
+        this.diasTerminar = diasTerminar[type];
+        this.type = type;
+        this.cantidadTrabajadores = cantidad;
+        this.mutex = mutex;
+        this.contadorDias = 0;
+        this.almacen = almacen;
+        this.salarioAcumulado = 0;
+        
+        if (this.type == 0){
+            this.salario = 20;
+        } else if (this.type == 1) {
+            this.salario = 26;
+        } else if (this.type == 2) {
+            this.salario = 40;
+        } else if (this.type == 3) {
+            this.salario = 16;
+        } else if (this.type == 4) {
+            this.salario = 34;
+        }
+    }
+
+    public int getCantidadTrabajadores() {
+        return cantidadTrabajadores;
+    }
+
+    public void setCantidadTrabajadores(int cantidadTrabajadores) {
+        this.cantidadTrabajadores = cantidadTrabajadores;
+    }
+
+    public int getDiaDuracion() {
+        return diaDuracion;
+    }
+
+    public void setDiaDuracion(int diaDuracion) {
+        this.diaDuracion = diaDuracion;
+    }
+
+    public int getSalario() {
+        return salario;
+    }
+
+    public void setSalario(int salario) {
+        this.salario = salario;
+    }
+
+    public float getSalarioAcumulado() {
+        return salarioAcumulado;
+    }
+
+    public void setSalarioAcumulado(float salarioAcumulado) {
+        this.salarioAcumulado = salarioAcumulado;
+    }
+
+    public int getContadorDias() {
+        return contadorDias;
+    }
+
+    public void setContadorDias(int contadorDias) {
+        this.contadorDias = contadorDias;
+    }
+
+    public int getDiasTerminar() {
+        return diasTerminar;
+    }
+
+    public void setDiasTerminar(int diasTerminar) {
+        this.diasTerminar = diasTerminar;
+    }
+
+    public Almacen getAlmacen() {
+        return almacen;
+    }
+
+    public void setAlmacen(Almacen almacen) {
+        this.almacen = almacen;
+    }
+
+    public Semaphore getMutex() {
+        return mutex;
+    }
+
+    public void setMutex(Semaphore mutex) {
+        this.mutex = mutex;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
     
     
