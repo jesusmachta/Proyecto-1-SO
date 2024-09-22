@@ -48,7 +48,7 @@ public class Trabajadores extends Thread{
             this.salario = 34;
         }
     }
-
+    
     public int getCantidadTrabajadores() {
         return cantidadTrabajadores;
     }
