@@ -35,7 +35,20 @@ public class Ensamblador extends Thread{
         this.mutex = mutex;
     }
     
+    public void pagarSalario(){
+        this.salarioAcumulado = ((this.salario * 24) * this.cantidadTrabajadores) + (this.salarioAcumulado);
+    }
     
+    //uso add en vez de añadir para no tener que usar la 'ñ'
+    public void addTrabajador(){
+        this.cantidadTrabajadores = 1 + this.cantidadTrabajadores;
+    }
+    
+    public void eliminarTrabajador(){
+        if (this.cantidadTrabajadores != 1){
+            this.cantidadTrabajadores = this.cantidadTrabajadores - 1;
+        }
+    }
     
     public Semaphore getMutex() {
         return mutex;
