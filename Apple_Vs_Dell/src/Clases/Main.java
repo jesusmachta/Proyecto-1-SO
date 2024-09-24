@@ -15,31 +15,13 @@ import javax.swing.JFrame;
  */
 public class Main {
     public static void main(String[] args) {
-    
-        
-        //MainI Main = new MainI();
-        //Main.setVisible(true);
-        
-        Almacen a = new Almacen();
-        Compañia Apple = new Compañia("Apple", a);
-        Almacen d = new Almacen();
-        Compañia Dell = new Compañia("Dell", d);
-        
-        System.out.println(Dell.getAlmacen().getAlmacen_cpu_a());
-        Archivo ar = new Archivo();
-        
-        
-        
-        ar.CargarTxt();
-        ar.Guardar(Dell, Apple);
-        
-        
-        
-        
-      
-
-        
-        
+        Archivo archivo = new Archivo();
+        archivo.CrearTxt();
+        Almacen almacenDell = new Almacen(25, 20, 55, 35, 10, 0, 0);
+        Almacen almacenApple = new Almacen(25, 20, 55, 35, 10, 0, 0);
+        Compañia dell = new Compañia("Dell", almacenDell);
+        Compañia apple = new Compañia("Apple", almacenApple);
+        archivo.Guardar(dell, apple);
+        archivo.CargarTxt();
     }
-    
 }

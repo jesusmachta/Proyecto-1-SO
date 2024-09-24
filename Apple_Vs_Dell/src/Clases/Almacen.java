@@ -9,22 +9,22 @@ package Clases;
  * @author andres
  */
 public class Almacen {
+    int almacen_pb_a;
+    int almacen_cpu_a;
+    int almacen_mram_a;
+    int almacen_fa_a;
+    int almacen_tg_a;
+    int almacen_estandar_a;
+    int almacen_full_a;
 
-    public int almacen_pb_a;
-    public int almacen_cpu_a;
-    public int almacen_mram_a;
-    public int almacen_fa_a;
-    public int almacen_tg_a;
-    public int almacen_estandar_a;
-    public int almacen_full_a;
-    
-    public Almacen(){
-        this.almacen_pb_a = 25;
-        this.almacen_cpu_a = 20;
-        this.almacen_mram_a = 55;
-        this.almacen_fa_a = 35;
-        this.almacen_tg_a = 10;
-
+    public Almacen(int pb, int cpu, int mram, int fa, int tg, int estandar, int full) {
+        this.almacen_pb_a = pb;
+        this.almacen_cpu_a = cpu;
+        this.almacen_mram_a = mram;
+        this.almacen_fa_a = fa;
+        this.almacen_tg_a = tg;
+        this.almacen_estandar_a = estandar;
+        this.almacen_full_a = full;
     }
 
     public int getAlmacen_pb_a() {
@@ -82,9 +82,5 @@ public class Almacen {
     public void setAlmacen_full_a(int almacen_full_a) {
         this.almacen_full_a = almacen_full_a;
     }
-    
-     
-    
-    
-    
+
 }
