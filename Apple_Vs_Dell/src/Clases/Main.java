@@ -17,11 +17,12 @@ public class Main {
     public static void main(String[] args) {
         Archivo archivo = new Archivo();
         archivo.CrearTxt();
-        Almacen almacenDell = new Almacen(25, 20, 55, 35, 10, 0, 0);
-        Almacen almacenApple = new Almacen(25, 20, 55, 35, 10, 0, 0);
-        Compañia dell = new Compañia("Dell", almacenDell);
-        Compañia apple = new Compañia("Apple", almacenApple);
-        archivo.Guardar(dell, apple);
-        archivo.CargarTxt();
+        Almacen almacenDell = new Almacen(25, 20, 55, 35, 10, 0, 0,0,0);
+        Almacen almacenApple = new Almacen(25, 20, 55, 35, 10, 0, 0,0,0);
+        archivo.CargarTxt(almacenApple,almacenDell);
+        Trabajadores t = new Trabajadores(0,2);
+        t.crearComponente(almacenDell);
+        archivo.Guardar(almacenDell, almacenApple);
+        
     }
 }

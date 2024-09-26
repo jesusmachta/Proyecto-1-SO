@@ -113,5 +113,72 @@ public class Ensamblador extends Thread{
     public void setDiasTerminar(int diasTerminar) {
         this.diasTerminar = diasTerminar;
     }
+    
+    public int crearComputadorApple(Almacen almacen,int cantidad_ensabladores){
+        int ganancia = 0;
+        int costo = 0;
+        if(almacen.almacen_estandar_a % 6 == 0){
+            if(almacen.almacen_pb_a>=2){
+                almacen.almacen_pb_a += -2;
+                if(almacen.almacen_cpu_a>=1){
+                    almacen.almacen_cpu_a += -1;
+                    if(almacen.almacen_mram_a>=4){
+                        almacen.almacen_mram_a += -4;
+                        if(almacen.almacen_fa_a>=4){
+                            almacen.almacen_fa_a +=-4;
+                            if(almacen.almacen_tg_a>=2){
+                                almacen.almacen_tg_a+= -2;
+                                System.out.println("Computador creado con exito!!!");
+
+                                almacen.costos += cantidad_ensabladores * 48 *50;
+                                almacen.ganancias += 150000;
+                                almacen.almacen_full_a +=1;
+                            }else{
+                                System.out.println("No hay suficientes tarjetas gráficas para crear el computador");
+                            }
+                        }else{
+                            System.out.println("No hay suficientes fuentes de alimentación para crear el computador");
+                        }
+                    
+                    }else{
+                        System.out.println("No hay suficientes memorias ram para crear el computador");
+                    }
+                        
+                }else{
+                    System.out.println("No hay CPU's suficientes para crear el computador");
+                }
+            }else{
+                System.out.println("No hay placas base suficientes para crear el computador");
+            }
+        }else{
+            if(almacen.almacen_pb_a>=2){
+                almacen.almacen_pb_a += -2;
+                if(almacen.almacen_cpu_a>=1){
+                    almacen.almacen_cpu_a += -1;
+                    if(almacen.almacen_mram_a>=4){
+                        almacen.almacen_mram_a += -4;
+                        if(almacen.almacen_fa_a>=4){
+                            almacen.almacen_fa_a +=-4;
+                            System.out.println("Computador creado con exito!!!");
+                            almacen.ganancias += 100000;
+                            almacen.costos += cantidad_ensabladores * 50 * 48;
+                            almacen.almacen_estandar_a += 1;
+                        }else{
+                            System.out.println("No hay suficientes fuentes de alimentación para crear el computador");
+                        }
+                    
+                    }else{
+                        System.out.println("No hay suficientes memorias ram para crear el computador");
+                    }
+                        
+                }else{
+                    System.out.println("No hay CPU's suficientes para crear el computador");
+                }
+            }else{
+                System.out.println("No hay placas base suficientes para crear el computador");
+            }
+            
+        }return ganancia;
+    }
 
 }

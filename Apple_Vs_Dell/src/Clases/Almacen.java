@@ -16,8 +16,10 @@ public class Almacen {
     int almacen_tg_a;
     int almacen_estandar_a;
     int almacen_full_a;
+    int costos;
+    int ganancias;
 
-    public Almacen(int pb, int cpu, int mram, int fa, int tg, int estandar, int full) {
+    public Almacen(int pb, int cpu, int mram, int fa, int tg, int estandar, int full,int costos, int ganancias) {
         this.almacen_pb_a = pb;
         this.almacen_cpu_a = cpu;
         this.almacen_mram_a = mram;
@@ -25,6 +27,8 @@ public class Almacen {
         this.almacen_tg_a = tg;
         this.almacen_estandar_a = estandar;
         this.almacen_full_a = full;
+        this.costos = costos;
+        this.ganancias = ganancias;
     }
 
     public int getAlmacen_pb_a() {

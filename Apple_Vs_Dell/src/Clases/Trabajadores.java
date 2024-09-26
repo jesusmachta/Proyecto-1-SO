@@ -142,11 +142,9 @@ public class Trabajadores extends Thread{
         this.type = type;
     }
     
-    public void crearComponente(Compañia compañia){
-        int costo;
-        Almacen componente = compañia.getAlmacen(); 
-        
-        
+    public int crearComponente(Almacen componente){
+        int costo = 0;
+
             if(this.type == 0){
                 if (componente.almacen_pb_a == 0){
                     System.out.println("Almacen de Placas Base lleno, no es posible almacenar más Cpu");
@@ -203,6 +201,11 @@ public class Trabajadores extends Thread{
                     System.out.println("Costo de creación de la tarjeta gráfica: "+ costo+"$");
                 }
             }
+            componente.costos +=costo;
+            componente.ganancias =componente.ganancias - componente.costos;
+            return costo;
+            
+            
         }
         
     
