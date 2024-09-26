@@ -4,34 +4,48 @@
  */
 package Clases;
 
+import javax.swing.JLabel;
+
 /**
  *
  * @author andres
  */
 public class Almacen {
-    int almacen_pb_a;
-    int almacen_cpu_a;
-    int almacen_mram_a;
-    int almacen_fa_a;
-    int almacen_tg_a;
-    int almacen_estandar_a;
-    int almacen_full_a;
-    int costos;
-    int ganancias;
+    private int almacen_pb_a; // placas base
+    private int almacen_cpu_a; // productores de CPU
+    private int almacen_mram_a; // productores de memoria RAM
+    private int almacen_fa_a; // productores de fuentes de alimentacion
+    private int almacen_tg_a; // productores de tarjetas graficas
+    private int almacen_computadoras; // computadora terminada
+    private int almacen_contador_tg; // crear capitulo con tarjeta grafica
+    private int tarjetaGrafica; // computadoras con TarjetaGrafica
+    private int[] necesidades;
+    private JLabel[] labels;
+    private Compañia compañia;
 
-    public Almacen(int pb, int cpu, int mram, int fa, int tg, int estandar, int full, int costos, int ganancias) {
-        this.almacen_pb_a = pb;
-        this.almacen_cpu_a = cpu;
-        this.almacen_mram_a = mram;
-        this.almacen_fa_a = fa;
-        this.almacen_tg_a = tg;
-        this.almacen_estandar_a = estandar;
-        this.almacen_full_a = full;
-        this.costos = costos;
-        this.ganancias = ganancias;
+    public Almacen(int[] necesidades, Compañia compañia) {
+        this.almacen_pb_a = 0;
+        this.almacen_cpu_a = 0;
+        this.almacen_mram_a = 0;
+        this.almacen_fa_a = 0;
+        this.almacen_tg_a = 0;
+        this.almacen_computadoras = 0;
+        this.almacen_contador_tg = 0;
+        this.tarjetaGrafica = 0;
+        this.necesidades = necesidades;
+        this.compañia = compañia;
+
     }
 
     public void añadirParte() {
+
+    }
+
+    public void añadirComputadora() {
+
+    }
+
+    public void enviarComputadora() {
 
     }
 
@@ -75,20 +89,51 @@ public class Almacen {
         this.almacen_tg_a = almacen_tg_a;
     }
 
-    public int getAlmacen_estandar_a() {
-        return almacen_estandar_a;
+    public int getAlmacen_computadoras() {
+        return almacen_computadoras;
     }
 
-    public void setAlmacen_estandar_a(int almacen_estandar_a) {
-        this.almacen_estandar_a = almacen_estandar_a;
+    public void setAlmacen_computadoras(int almacen_computadoras) {
+        this.almacen_computadoras = almacen_computadoras;
     }
 
-    public int getAlmacen_full_a() {
-        return almacen_full_a;
+    public int getAlmacen_contador_tg() {
+        return almacen_contador_tg;
     }
 
-    public void setAlmacen_full_a(int almacen_full_a) {
-        this.almacen_full_a = almacen_full_a;
+    public void setAlmacen_contador_tg(int almacen_contador_tg) {
+        this.almacen_contador_tg = almacen_contador_tg;
     }
 
+    public int getTarjetaGrafica() {
+        return tarjetaGrafica;
+    }
+
+    public void setTarjetaGrafica(int tarjetaGrafica) {
+        this.tarjetaGrafica = tarjetaGrafica;
+    }
+
+    public int[] getNecesidades() {
+        return necesidades;
+    }
+
+    public void setNecesidades(int[] necesidades) {
+        this.necesidades = necesidades;
+    }
+
+    public JLabel[] getLabels() {
+        return labels;
+    }
+
+    public void setLabels(JLabel[] labels) {
+        this.labels = labels;
+    }
+
+    public Compañia getCompañia() {
+        return compañia;
+    }
+
+    public void setCompañia(Compañia compañia) {
+        this.compañia = compañia;
+    }
 }
