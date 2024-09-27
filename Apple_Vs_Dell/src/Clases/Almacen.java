@@ -34,15 +34,121 @@ public class Almacen {
         this.tarjetaGrafica = 0;
         this.necesidades = necesidades;
         this.compañia = compañia;
-
     }
 
-    public void añadirParte() {
-
+    public boolean chequear() {
+        boolean listo = false;
+        if (almacen_pb_a >= necesidades[0] && almacen_cpu_a >= necesidades[1] && almacen_mram_a >= necesidades[2]
+                && almacen_fa_a >= necesidades[3]) {
+            listo = true;
+        }
+        return listo;
     }
 
-    public void añadirComputadora() {
+    public int posiblesComputadoras(int value, int type) {
+        int cantidad = value;
+        int quantity = 0;
+        while (cantidad > 0) {
+            int resto = cantidad - necesidades[type];
+            if (resto >= 0) {
+                quantity += 1;
+            }
+            cantidad = resto;
+        }
+        return quantity;
+    }
 
+    public void añadirParte(int type, int cantidadTrabajadores) {
+        if (type == 0 && this.getAlmacen_pb_a() < 25) { // Su almacén tiene una capacidad máxima de 25 placas base
+            int calcular = this.getAlmacen_pb_a() + (cantidadTrabajadores * 1);
+            if (calcular < 25) {
+                this.setAlmacen_pb_a(calcular);
+            } else {
+                this.setAlmacen_pb_a(25);
+            }
+            this.labels[type].setText(Integer.toString(this.getAlmacen_pb_a()));
+        } else if (type == 1 && this.getAlmacen_cpu_a() < 20) { // Su almacén tiene una capacidad máxima de 20 CPU
+            int calcular = this.getAlmacen_cpu_a() + (cantidadTrabajadores * 1);
+            if (calcular < 20) {
+                this.setAlmacen_cpu_a(calcular);
+            } else {
+                this.setAlmacen_cpu_a(20);
+            }
+            this.labels[type].setText(Integer.toString(this.getAlmacen_cpu_a()));
+        } else if (type == 2 && this.getAlmacen_mram_a() < 55) { // Su almacén tiene una capacidad máxima de 55 Memoria
+                                                                 // RAM
+            int calcular = this.getAlmacen_mram_a() + (cantidadTrabajadores * 1);
+            if (calcular < 55) {
+                this.setAlmacen_mram_a(calcular);
+            } else {
+                this.setAlmacen_mram_a(55);
+            }
+            this.labels[type].setText(Integer.toString(this.getAlmacen_mram_a()));
+        } else if (type == 3 && this.getAlmacen_fa_a() < 35) { // Su almacén tiene una capacidad máxima de 35 fuentes de
+                                                               // alimentación
+            int calcular = this.getAlmacen_fa_a() + (cantidadTrabajadores * 1);
+            if (calcular < 35) {
+                this.setAlmacen_fa_a(calcular);
+            } else {
+                this.setAlmacen_fa_a(35);
+            }
+            this.labels[type].setText(Integer.toString(this.getAlmacen_fa_a()));
+        } else if (type == 4 && this.getAlmacen_tg_a() < 10) { // Su almacén tiene una capacidad máxima de 10 tarjetas
+                                                               // gráficas
+            int calcular = this.getAlmacen_tg_a() + (cantidadTrabajadores * 1);
+            if (calcular < 10) {
+                this.setAlmacen_tg_a(calcular);
+            } else {
+                this.setAlmacen_tg_a(10);
+            }
+            this.labels[type].setText(Integer.toString(this.getAlmacen_tg_a()));
+        }
+        chequear();
+    }
+
+    public void añadirComputadora(int cantidad_ensabladores) {
+        int cantidadComputadoras = cantidad_ensabladores;
+        // Para las placas base
+        int quantity = posiblesComputadoras(almacen_pb_a, 0);
+        if (quantity < cantidadComputadoras) {
+            cantidadComputadoras = quantity;
+        }
+        // Para los CPU's
+        quantity = posiblesComputadoras(almacen_cpu_a, 0);
+        if (quantity < cantidadComputadoras) {
+            cantidadComputadoras = quantity;
+        }
+        // Para la memoria RAM
+        quantity = posiblesComputadoras(almacen_mram_a, 0);
+        if (quantity < cantidadComputadoras) {
+            cantidadComputadoras = quantity;
+        }
+        // Para las fuentes de alimentacion
+        quantity = posiblesComputadoras(almacen_fa_a, 0);
+        if (quantity < cantidadComputadoras) {
+            cantidadComputadoras = quantity;
+        }
+        almacen_pb_a -= (necesidades[0] * cantidadComputadoras);
+        this.labels[0].setText(Integer.toString(this.getAlmacen_pb_a()));
+        almacen_cpu_a -= (necesidades[1] * cantidadComputadoras);
+        this.labels[1].setText(Integer.toString(this.getAlmacen_cpu_a()));
+        almacen_mram_a -= (necesidades[2] * cantidadComputadoras);
+        this.labels[2].setText(Integer.toString(this.getAlmacen_mram_a()));
+        almacen_fa_a -= (necesidades[3] * cantidadComputadoras);
+        this.labels[3].setText(Integer.toString(this.getAlmacen_fa_a()));
+        almacen_computadoras += cantidadComputadoras;
+
+        while (almacen_contador_tg >= necesidades[5] && almacen_tg_a >= necesidades[4] && cantidadComputadoras > 0) {
+            tarjetaGrafica += 1;
+            almacen_tg_a -= necesidades[4];
+            almacen_contador_tg -= necesidades[5];
+            cantidadComputadoras -= 1;
+        }
+        this.labels[4].setText(Integer.toString(this.getAlmacen_tg_a()));
+        almacen_computadoras += cantidadComputadoras;
+        almacen_contador_tg += cantidadComputadoras;
+        this.labels[5].setText(Integer.toString(almacen_computadoras));
+        this.labels[6].setText(Integer.toString(tarjetaGrafica));
     }
 
     public void enviarComputadora() {
