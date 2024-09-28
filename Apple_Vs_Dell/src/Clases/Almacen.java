@@ -152,7 +152,15 @@ public class Almacen {
     }
 
     public void enviarComputadora() {
-
+        this.compañia.setGanancias(
+                this.compañia.getGanancias() + (this.compañia.getPrecioComputadora() * almacen_computadoras));
+        this.compañia.setGanancias(
+                this.compañia.getGanancias() + (this.compañia.getPrecioComputadoraTG() * almacen_contador_tg));
+        this.labels[7].setText(Integer.toString(this.compañia.getGanancias()));
+        almacen_computadoras = 0;
+        almacen_contador_tg = 0;
+        this.labels[5].setText(Integer.toString(almacen_computadoras));
+        this.labels[6].setText(Integer.toString(almacen_contador_tg));
     }
 
     public int getAlmacen_pb_a() {
