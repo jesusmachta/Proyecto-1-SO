@@ -79,8 +79,7 @@ public class Compañia extends Thread {
         tarjetasGraficas = new Trabajadores(4, diaDuracion, cantidadInicial[4], almacen, mutex, diasTerminar);
         ensamblador = new Ensamblador(diaDuracion, cantidadInicial[5], almacen, mutex);
         // director = new Director(diaDuracion, almacen, mutex, ,mutex2, mutex3, this);
-        // ProjectManager = new ProjectManager(diaDuracion, mutex, ,mutex2, mutex3,
-        // this);
+        ProjectManager = new ProjectManager(diaDuracion, mutex, mutex2, mutex3, this);
     }
 
     public void startEmpleados() {
@@ -90,8 +89,8 @@ public class Compañia extends Thread {
         fuentesAlimentacion.start();
         tarjetasGraficas.start();
         ensamblador.start();
+        ProjectManager.start();
         // director.start();
-        // ProjectManager.start();
     }
 
     public int[] getCantidadInicial() {
