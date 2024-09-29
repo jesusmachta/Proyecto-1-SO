@@ -7,9 +7,7 @@ package Clases;
 import static java.lang.Thread.sleep;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import javax.swing.JOptionPane;
-
 import java.util.concurrent.Semaphore;
 
 /**
@@ -93,7 +91,6 @@ public class Trabajadores extends Thread {
 
             } catch (InterruptedException ex) {
                 Logger.getLogger(Trabajadores.class.getName()).log(Level.SEVERE, null, ex);
-                ;
             }
         }
     }

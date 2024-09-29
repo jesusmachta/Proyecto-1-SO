@@ -16,13 +16,5 @@ import javax.swing.JFrame;
 public class Main {
     public static void main(String[] args) {
         Archivo archivo = new Archivo();
-        archivo.CrearTxt();
-        Almacen almacenDell = new Almacen(25, 20, 55, 35, 10, 0, 0,0,0);
-        Almacen almacenApple = new Almacen(25, 20, 55, 35, 10, 0, 0,0,0);
-        archivo.CargarTxt(almacenApple,almacenDell);
-        Trabajadores t = new Trabajadores(0,2);
-        t.crearComponente(almacenDell);
-        archivo.Guardar(almacenDell, almacenApple);
-        
     }
 }

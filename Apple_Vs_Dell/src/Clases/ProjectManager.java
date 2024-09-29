@@ -78,7 +78,7 @@ public class ProjectManager extends Thread {
         }
     }
 
-    public void run() {
+    public void ejecutar() {
         while (true) {
             try {
                 pagarSalario();
@@ -91,7 +91,6 @@ public class ProjectManager extends Thread {
                     sleep(((diaDuracion / 24) / 2));
                     status = "Chequeando";
                     this.labels[0].setText(status);
-                    // chequeando();
                     sleep(((diaDuracion / 24) / 2));
                 }
                 // Las últimas 8 horas del día las invierte cambiando el contador con los días

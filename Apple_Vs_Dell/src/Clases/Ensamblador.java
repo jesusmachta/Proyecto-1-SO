@@ -62,7 +62,7 @@ public class Ensamblador extends Thread {
         }
     }
 
-    public void run() {
+    public void ejecutar() {
         while (true) {
             try {
                 pagarSalario();

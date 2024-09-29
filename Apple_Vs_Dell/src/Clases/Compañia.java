@@ -78,7 +78,7 @@ public class Compañia extends Thread {
         fuentesAlimentacion = new Trabajadores(3, diaDuracion, cantidadInicial[3], almacen, mutex, diasTerminar);
         tarjetasGraficas = new Trabajadores(4, diaDuracion, cantidadInicial[4], almacen, mutex, diasTerminar);
         ensamblador = new Ensamblador(diaDuracion, cantidadInicial[5], almacen, mutex);
-        // director = new Director(diaDuracion, almacen, mutex, ,mutex2, mutex3, this);
+        director = new Director(diaDuracion, almacen, mutex, mutex2, mutex3, this);
         ProjectManager = new ProjectManager(diaDuracion, mutex, mutex2, mutex3, this);
     }
 
@@ -90,7 +90,38 @@ public class Compañia extends Thread {
         tarjetasGraficas.start();
         ensamblador.start();
         ProjectManager.start();
-        // director.start();
+        director.start();
+        // Director Y ProjectManager so hijos ya que ambos tienen acceso al contador de
+        // la fechaTope
+    }
+
+    public void añadirTrabajadores(int type) {
+        int contadorActualTrabajadores = (placasBase.getCantidadTrabajadores() + cpuS.getCantidadTrabajadores()
+                + memoriaRam.getCantidadTrabajadores() + fuentesAlimentacion.getCantidadTrabajadores()
+                + tarjetasGraficas.getCantidadTrabajadores() + ensamblador.getCantidadTrabajadores());
+        if (contadorActualTrabajadores < getMaximoTrabajadores()) {
+            if (type == 0) {
+                placasBase.addTrabajador();
+            }
+            if (type == 1) {
+                cpuS.addTrabajador();
+            }
+            if (type == 2) {
+                memoriaRam.addTrabajador();
+            }
+            if (type == 3) {
+                fuentesAlimentacion.addTrabajador();
+            }
+            if (type == 4) {
+                tarjetasGraficas.addTrabajador();
+            }
+            if (type == 5) {
+                ensamblador.addTrabajador();
+            }
+        } else {
+            JOptionPane.showMessageDialog(null,
+                    "No se pueden añadir mas trabajadores. Se ha superado la cantidad limite.");
+        }
     }
 
     public int[] getCantidadInicial() {
