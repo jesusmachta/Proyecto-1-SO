@@ -1,8 +1,0 @@
-Apple
-Placas Base 25
-CPU's 20
-Memorias Ram 55
-Fuentes de Alimentación 35
-Tarjetas Gráficas 10
-Computadoras Estandar 0
-Computadoras con Tarjetas Gráficas 0

@@ -37,9 +37,11 @@ public class Ensamblador extends Thread {
 
     public boolean chequear() {
         boolean listo = false;
+        System.out.println("enam1");
         try {
             this.mutex.acquire();
             listo = this.almacen.chequear();
+            System.out.println("enam2");
             this.mutex.release();
         } catch (InterruptedException ex) {
             Logger.getLogger(Trabajadores.class.getName()).log(Level.SEVERE, null, ex);
@@ -48,30 +50,35 @@ public class Ensamblador extends Thread {
     }
 
     public void pagarSalario() {
-        this.salarioAcumulado = ((this.salario * 24) * this.cantidadTrabajadores) + (this.salarioAcumulado);
+        this.salarioAcumulado = this.salarioAcumulado + ((this.salario * 24) * this.cantidadTrabajadores);
+        System.out.println("enam3");
     }
 
-    // uso add en vez de añadir para no tener que usar la 'ñ'
-    public void addTrabajador() {
-        this.cantidadTrabajadores = 1 + this.cantidadTrabajadores;
+    public void añadirTrabajadores() {
+        this.cantidadTrabajadores = this.cantidadTrabajadores + 1;
+        System.out.println("enam4");
     }
 
     public void eliminarTrabajador() {
         if (this.cantidadTrabajadores != 1) {
             this.cantidadTrabajadores = this.cantidadTrabajadores - 1;
+            System.out.println("enam5");
         }
     }
 
-    public void ejecutar() {
+    @Override
+    public void run(){
         while (true) {
             try {
                 pagarSalario();
+                System.out.println("enam6");
                 if (contadorDias == 0) {
                     if (chequear()) {
                         trabajo();
                     }
                 } else {
                     trabajo();
+                    System.out.println("enam7");
                 }
                 sleep(this.diaDuracion); // espera a que termine el dia
             } catch (InterruptedException ex) {
@@ -82,9 +89,11 @@ public class Ensamblador extends Thread {
 
     public void trabajo() {
         this.contadorDias = this.contadorDias + 1;
+        System.out.println("enam8");
         if (this.contadorDias == this.diasTerminar) {
             try {
                 this.mutex.acquire();
+                System.out.println("enam9");
                 this.almacen.añadirComputadora(this.cantidadTrabajadores);
                 this.mutex.release();
                 this.contadorDias = 0;
@@ -157,79 +166,6 @@ public class Ensamblador extends Thread {
     public void setDiasTerminar(int diasTerminar) {
         this.diasTerminar = diasTerminar;
     }
-
-    // public int crearComputadorApple(Almacen almacen,int cantidad_ensabladores){
-    // int ganancia = 0;
-    // int costo = 0;
-    // if(almacen.almacen_estandar_a % 6 == 0){
-    // if(almacen.almacen_pb_a>=2){
-    // almacen.almacen_pb_a += -2;
-    // if(almacen.almacen_cpu_a>=1){
-    // almacen.almacen_cpu_a += -1;
-    // if(almacen.almacen_mram_a>=4){
-    // almacen.almacen_mram_a += -4;
-    // if(almacen.almacen_fa_a>=4){
-    // almacen.almacen_fa_a +=-4;
-    // if(almacen.almacen_tg_a>=2){
-    // almacen.almacen_tg_a+= -2;
-    // System.out.println("Computador creado con exito!!!");
-
-    // almacen.costos += cantidad_ensabladores * 48 *50;
-    // almacen.ganancias += 150000;
-    // almacen.almacen_full_a +=1;
-    // }else{
-    // System.out.println("No hay suficientes tarjetas gráficas para crear el
-    // computador");
-    // }
-    // }else{
-    // System.out.println("No hay suficientes fuentes de alimentación para crear el
-    // computador");
-    // }
-
-    // }else{
-    // System.out.println("No hay suficientes memorias ram para crear el
-    // computador");
-    // }
-
-    // }else{
-    // System.out.println("No hay CPU's suficientes para crear el computador");
-    // }
-    // }else{
-    // System.out.println("No hay placas base suficientes para crear el
-    // computador");
-    // }
-    // }else{
-    // if(almacen.almacen_pb_a>=2){
-    // almacen.almacen_pb_a += -2;
-    // if(almacen.almacen_cpu_a>=1){
-    // almacen.almacen_cpu_a += -1;
-    // if(almacen.almacen_mram_a>=4){
-    // almacen.almacen_mram_a += -4;
-    // if(almacen.almacen_fa_a>=4){
-    // almacen.almacen_fa_a +=-4;
-    // System.out.println("Computador creado con exito!!!");
-    // almacen.ganancias += 100000;
-    // almacen.costos += cantidad_ensabladores * 50 * 48;
-    // almacen.almacen_estandar_a += 1;
-    // }else{
-    // System.out.println("No hay suficientes fuentes de alimentación para crear el
-    // computador");
-    // }
-
-    // }else{
-    // System.out.println("No hay suficientes memorias ram para crear el
-    // computador");
-    // }
-
-    // }else{
-    // System.out.println("No hay CPU's suficientes para crear el computador");
-    // }
-    // }else{
-    // System.out.println("No hay placas base suficientes para crear el
-    // computador");
-    // }
-
-    // }return ganancia;
-    // }
-
 }
+    
+    

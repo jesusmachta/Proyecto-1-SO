@@ -30,6 +30,8 @@ public class ProjectManager extends Thread {
     private Semaphore mutex2;
     private Semaphore mutex3;
     private Compañia compañia;
+    private GraphManager grafico;
+
 
     public ProjectManager(int diaDuracion, Semaphore mutex, Semaphore mutex2, Semaphore mutex3, Compañia compañia) {
         this.salarioAcumulado = 0;
@@ -42,12 +44,14 @@ public class ProjectManager extends Thread {
         this.mutex = mutex;
         this.mutex2 = mutex2;
         this.mutex3 = mutex3;
+        this.compañia = compañia;
     }
 
     public void pagarSalario() {
         try {
             this.mutex3.acquire();
             salarioAcumulado = this.salarioAcumulado + (this.salario * 24);
+            System.out.println("pm1");
             this.mutex3.release();
         } catch (InterruptedException ex) {
             Logger.getLogger(Trabajadores.class.getName()).log(Level.SEVERE, null, ex);
@@ -61,6 +65,7 @@ public class ProjectManager extends Thread {
             this.labels[1].setText(Integer.toString(this.compañia.getCostos()));
             this.compañia.totalUtilidades();
             this.labels[2].setText(Integer.toString(this.compañia.getUtilidades()));
+            System.out.println("pm2");
             this.mutex3.release();
         } catch (InterruptedException ex) {
             Logger.getLogger(Trabajadores.class.getName()).log(Level.SEVERE, null, ex);
@@ -72,13 +77,15 @@ public class ProjectManager extends Thread {
             this.mutex2.acquire();
             this.compañia.setFechaTope(this.compañia.getFechaTope() - 1);
             this.labels[3].setText(Integer.toString(this.compañia.getFechaTope()));
+            System.out.println(" pm3");
             this.mutex2.release();
         } catch (InterruptedException ex) {
             Logger.getLogger(Trabajadores.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    public void ejecutar() {
+    @Override
+    public void run(){
         while (true) {
             try {
                 pagarSalario();
@@ -92,6 +99,7 @@ public class ProjectManager extends Thread {
                     status = "Chequeando";
                     this.labels[0].setText(status);
                     sleep(((diaDuracion / 24) / 2));
+                    System.out.println("pm3");
                 }
                 // Las últimas 8 horas del día las invierte cambiando el contador con los días
                 // restantes para la entrega
@@ -104,13 +112,26 @@ public class ProjectManager extends Thread {
                     // Cada estudio cuenta con: último número del carnet del desarrollador + 12
                     // trabajadores
                     this.labels[5].setText(Integer.toString(getTotalDiasTranscurridos()));
+                    this.grafico.actualizarGrafico();
+                    System.out.println("pm4");
                 }
-                sleep((diaDuracion / 24));
+                sleep((diaDuracion / 24) * 8);
+                System.out.println("pm5");
             } catch (InterruptedException ex) {
                 Logger.getLogger(Trabajadores.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
+
+    public GraphManager getGrafico() {
+        return grafico;
+    }
+
+    public void setGrafico(GraphManager grafico) {
+        this.grafico = grafico;
+    }
+    
+    
 
     public float getSalarioAcumulado() {
         return salarioAcumulado;
@@ -167,19 +188,27 @@ public class ProjectManager extends Thread {
     public void setContadorHoras(int contadorHoras) {
         this.contadorHoras = contadorHoras;
     }
-
+    /**
+     * @return the totalDiasTranscurridos
+     */
     public int getTotalDiasTranscurridos() {
         return totalDiasTranscurridos;
     }
-
+    /**
+     * @param totalDiasTranscurridos the totalDiasTranscurridos to set
+     */
     public void setTotalDiasTranscurridos(int totalDiasTranscurridos) {
         this.totalDiasTranscurridos = totalDiasTranscurridos;
     }
-
+    /**
+     * @return the status
+     */
     public String getStatus() {
         return status;
     }
-
+    /**
+     * @param status the status to set
+     */
     public void setStatus(String status) {
         this.status = status;
     }
@@ -225,3 +254,7 @@ public class ProjectManager extends Thread {
     }
 
 }
+
+
+    
+   

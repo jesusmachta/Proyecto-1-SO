@@ -47,19 +47,20 @@ public class Director extends Thread {
     }
 
     public void chequearProjectManager() {
-        if (compañia.getProjectManager().getStatus().equals("Viendo al Red de los Piratas")) {
+        if (compañia.getProjectManager().getStatus().equals("Viendo al Rey de los Piratas")) {
             compañia.getProjectManager().setFalta(compañia.getProjectManager().getFalta() + 1);
+            System.out.println("NO SEdiretor1");
             this.labels[2].setText(Integer.toString(compañia.getProjectManager().getFalta()));
             compañia.getProjectManager().setDescontado(compañia.getProjectManager().getDescontado() + 100);
             this.labels[3].setText(Integer.toString(compañia.getProjectManager().getDescontado()));
             try {
                 this.mutex3.acquire();
-                compañia.getProjectManager()
-                        .setSalarioAcumulado(compañia.getProjectManager().getSalarioAcumulado() - 100); // le colocara
+                compañia.getProjectManager().setSalarioAcumulado(compañia.getProjectManager().getSalarioAcumulado() - 100); // le colocara
                                                                                                         // una falta y
                                                                                                         // le descontara
                                                                                                         // $100 de su //
                                                                                                         // sueldo
+                System.out.println("NO SEdiretor2");
                 this.mutex3.release();
             } catch (InterruptedException ex) {
                 Logger.getLogger(Trabajadores.class.getName()).log(Level.SEVERE, null, ex);
@@ -69,16 +70,20 @@ public class Director extends Thread {
 
     public void pagarSalario() {
         this.salarioAcumulado = this.salarioAcumulado + (this.salario * 24);
+        System.out.println("NO SEdiretor3");
     }
 
     public void chequearFechaTope() {
         try {
             this.mutex2.acquire();
+            System.out.println("NO SEdiretor4");
             if (this.compañia.getFechaTope() == 0) {
                 modoDirector = true;
                 this.compañia.setFechaTope(reinicioFechaTope);
                 this.labels[1].setText(Integer.toString(this.compañia.getFechaTope()));
+                System.out.println("NO SEdiretor5");
             }
+            System.out.println("NO SEdiretor6");
             this.mutex2.release();
         } catch (InterruptedException ex) {
             Logger.getLogger(Trabajadores.class.getName()).log(Level.SEVERE, null, ex);
@@ -90,6 +95,7 @@ public class Director extends Thread {
         if (this.contadorDias == this.diasTerminar) {
             try {
                 this.mutex.acquire();
+                System.out.println("NO SEdiretor7");
                 getAlmacen().enviarComputadora();
                 this.mutex.release();
                 this.contadorDias = 0;
@@ -100,16 +106,19 @@ public class Director extends Thread {
         }
     }
 
-    public void ejecutar() {
+     @Override
+    public void run(){
         while (true) {
             try {
                 pagarSalario();
                 chequearFechaTope();
+                System.out.println("NO SEdiretor8");
                 if (modoDirector) {
                     status = "Enviando Computadoras";
                     this.labels[0].setText(status);
                     trabajo();
                     sleep(this.diaDuracion);
+                    System.out.println("NO SEdiretor9");
                 } else {
                     double horaRandom = Math.random() * 23;
                     int random = (int) horaRandom;
@@ -124,6 +133,7 @@ public class Director extends Thread {
                     this.labels[0].setText(status);
                     sleep((diaDuracion * 25) / (60 * 24));
                     sleep((this.diaDuracion * (23 - random)) / 24);
+                    System.out.println("NO SEdiretor10");
                 }
             } catch (InterruptedException ex) {
                 Logger.getLogger(Trabajadores.class.getName()).log(Level.SEVERE, null, ex);
@@ -186,15 +196,21 @@ public class Director extends Thread {
     public void setReinicioFechaTope(int reinicioFechaTope) {
         this.reinicioFechaTope = reinicioFechaTope;
     }
-
+    /**
+     * @return the status
+     */
     public String getStatus() {
         return status;
     }
-
+    /**
+     * @param status the status to set
+     */
     public void setStatus(String status) {
         this.status = status;
     }
-
+    /**
+     * @return the almacen
+     */
     public Almacen getAlmacen() {
         return almacen;
     }
@@ -234,13 +250,20 @@ public class Director extends Thread {
     public void setMutex3(Semaphore mutex3) {
         this.mutex3 = mutex3;
     }
-
+    /**
+     * @return the labels
+     */
     public JLabel[] getLabels() {
         return labels;
     }
-
+    /**
+     * @param labels the labels to set
+     */
     public void setLabels(JLabel[] labels) {
         this.labels = labels;
     }
 
 }
+
+
+    

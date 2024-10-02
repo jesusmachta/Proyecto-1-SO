@@ -4,6 +4,7 @@
  */
 package Clases;
 
+import Interfaces.MainInterface;
 import static java.lang.Thread.sleep;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
@@ -15,7 +16,7 @@ import javax.swing.JOptionPane;
  *
  * @author jesusmachta
  */
-public class Compañia extends Thread {
+public class Compañia extends Thread{
 
     private Trabajadores placasBase;
     private Trabajadores cpuS;
@@ -42,7 +43,7 @@ public class Compañia extends Thread {
     private Ensamblador ensamblador;
 
     public Compañia(int[] necesidades, int[] diasTerminar, int[] cantidadInicial, int maximoTrabajadores,
-            int diaDuracion, int precioComputadora, int fechaTope) {
+            int diaDuracion, int precioComputadora, int precioComputadoraTG, int fechaTope) {
         this.necesidades = necesidades;
         this.diasTerminar = diasTerminar;
         this.cantidadInicial = cantidadInicial;
@@ -64,11 +65,15 @@ public class Compañia extends Thread {
     public void calcularCostos() {
         this.costos = (int) (placasBase.getSalarioAcumulado() + cpuS.getSalarioAcumulado()
                 + memoriaRam.getSalarioAcumulado() + fuentesAlimentacion.getSalarioAcumulado()
-                + tarjetasGraficas.getSalarioAcumulado() + ensamblador.getCantidadTrabajadores());
+                + tarjetasGraficas.getSalarioAcumulado() + ensamblador.getSalarioAcumulado() + ProjectManager.getSalarioAcumulado() + director.getSalarioAcumulado());
+        System.out.println("compañiacostos"); 
+        System.out.println(costos);
     }
 
     public void totalUtilidades() {
         this.utilidades = this.ganancias - this.costos;
+        System.out.println("compañiautilidades");
+        System.out.println(utilidades);
     }
 
     public void instanciarTrabajadores() {
@@ -78,8 +83,9 @@ public class Compañia extends Thread {
         fuentesAlimentacion = new Trabajadores(3, diaDuracion, cantidadInicial[3], almacen, mutex, diasTerminar);
         tarjetasGraficas = new Trabajadores(4, diaDuracion, cantidadInicial[4], almacen, mutex, diasTerminar);
         ensamblador = new Ensamblador(diaDuracion, cantidadInicial[5], almacen, mutex);
-        director = new Director(diaDuracion, almacen, mutex, mutex2, mutex3, this);
         ProjectManager = new ProjectManager(diaDuracion, mutex, mutex2, mutex3, this);
+        director = new Director(diaDuracion, almacen, mutex, mutex2, mutex3, this);
+        System.out.println("compañiainstanciar");
     }
 
     public void startEmpleados() {
@@ -91,6 +97,7 @@ public class Compañia extends Thread {
         ensamblador.start();
         ProjectManager.start();
         director.start();
+        System.out.println("compañiaempezar");
         // Director Y ProjectManager so hijos ya que ambos tienen acceso al contador de
         // la fechaTope
     }
@@ -99,25 +106,28 @@ public class Compañia extends Thread {
         int contadorActualTrabajadores = (placasBase.getCantidadTrabajadores() + cpuS.getCantidadTrabajadores()
                 + memoriaRam.getCantidadTrabajadores() + fuentesAlimentacion.getCantidadTrabajadores()
                 + tarjetasGraficas.getCantidadTrabajadores() + ensamblador.getCantidadTrabajadores());
+        System.out.println("compañiaañadir2");
+        System.out.println(contadorActualTrabajadores);
         if (contadorActualTrabajadores < getMaximoTrabajadores()) {
             if (type == 0) {
-                placasBase.addTrabajador();
+                placasBase.añadirTrabajadores();
             }
             if (type == 1) {
-                cpuS.addTrabajador();
+                cpuS.añadirTrabajadores();
             }
             if (type == 2) {
-                memoriaRam.addTrabajador();
+                memoriaRam.añadirTrabajadores();
             }
             if (type == 3) {
-                fuentesAlimentacion.addTrabajador();
+                fuentesAlimentacion.añadirTrabajadores();
             }
             if (type == 4) {
-                tarjetasGraficas.addTrabajador();
+                tarjetasGraficas.añadirTrabajadores();
             }
             if (type == 5) {
-                ensamblador.addTrabajador();
+                ensamblador.añadirTrabajadores();
             }
+            System.out.println("compañiaañadir");
         } else {
             JOptionPane.showMessageDialog(null,
                     "No se pueden añadir mas trabajadores. Se ha superado la cantidad limite.");
@@ -211,11 +221,16 @@ public class Compañia extends Thread {
     public void setDiasTerminar(int[] diasTerminar) {
         this.diasTerminar = diasTerminar;
     }
-
+    
+    /**
+     * @return the maximoTrabajadores
+     */
     public int getMaximoTrabajadores() {
         return maximoTrabajadores;
     }
-
+    /**
+     * @param maximoTrabajadores the maximoTrabajadores to set
+     */
     public void setMaximoTrabajadores(int maximoTrabajadores) {
         this.maximoTrabajadores = maximoTrabajadores;
     }
