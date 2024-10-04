@@ -415,7 +415,7 @@ public class MainInterface extends javax.swing.JFrame {
         ConfigurationDashboard.add(ensambladorLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, -1, -1));
 
         txt.setBackground(new java.awt.Color(51, 51, 51));
-        txt.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txt.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         txt.setForeground(new java.awt.Color(204, 204, 204));
         txt.setText("Guardar");
         txt.addActionListener(new java.awt.event.ActionListener() {
@@ -904,7 +904,7 @@ public class MainInterface extends javax.swing.JFrame {
         jPanel19.setBackground(new java.awt.Color(51, 51, 51));
 
         jLabel18.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel18.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
+        jLabel18.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(204, 204, 204));
         jLabel18.setText("Apple vs Dell");
 
@@ -913,9 +913,9 @@ public class MainInterface extends javax.swing.JFrame {
         jPanel19Layout.setHorizontalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel19Layout.createSequentialGroup()
-                .addGap(45, 45, 45)
+                .addGap(67, 67, 67)
                 .addComponent(jLabel18)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1157,7 +1157,7 @@ public class MainInterface extends javax.swing.JFrame {
         jPanel8.setBackground(new java.awt.Color(0, 0, 0));
 
         jLabel14.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel14.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("TRABAJADORES");
 
@@ -1175,7 +1175,7 @@ public class MainInterface extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel14)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 50));
@@ -1187,7 +1187,7 @@ public class MainInterface extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(0, 0, 0));
 
-        jLabel13.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("ALMACEN");
 
@@ -1205,7 +1205,7 @@ public class MainInterface extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel13)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 50));
@@ -1325,7 +1325,7 @@ public class MainInterface extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(0, 0, 0));
 
-        jLabel15.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("ESTADISTICAS");
 
@@ -1425,7 +1425,7 @@ public class MainInterface extends javax.swing.JFrame {
         jPanel18.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel23.setBackground(new java.awt.Color(185, 219, 253));
-        jLabel23.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel23.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel23.setText("ESTADISTICAS");
 
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
@@ -1575,7 +1575,7 @@ public class MainInterface extends javax.swing.JFrame {
         jPanel16.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel22.setBackground(new java.awt.Color(153, 0, 255));
-        jLabel22.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel22.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel22.setText("ALMACEN");
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
@@ -1592,7 +1592,7 @@ public class MainInterface extends javax.swing.JFrame {
             .addGroup(jPanel16Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel22)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         jPanel15.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 50));
@@ -1782,7 +1782,7 @@ public class MainInterface extends javax.swing.JFrame {
         jPanel14.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel20.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel20.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel20.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel20.setText("TRABAJADORES");
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
@@ -1934,7 +1934,7 @@ public class MainInterface extends javax.swing.JFrame {
                         .addComponent(fuenteLabelDell)
                         .addGap(83, 83, 83)
                         .addComponent(ensambladorLabelDell)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(qttyProjectsManagersApple1)
@@ -1982,7 +1982,7 @@ public class MainInterface extends javax.swing.JFrame {
         AppleVSDell.add(Grafico, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 970, 520));
 
         jLabel9.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel9.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Dias totales:");
         AppleVSDell.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 40, -1, -1));
