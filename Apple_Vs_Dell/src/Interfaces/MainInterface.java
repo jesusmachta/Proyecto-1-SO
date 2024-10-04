@@ -669,7 +669,7 @@ public class MainInterface extends javax.swing.JFrame {
                 .addContainerGap(77, Short.MAX_VALUE))
         );
 
-        ConfigurationDashboard.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 350, 360));
+        ConfigurationDashboard.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 350, 360));
 
         jPanel10.setBackground(new java.awt.Color(51, 51, 51));
 
