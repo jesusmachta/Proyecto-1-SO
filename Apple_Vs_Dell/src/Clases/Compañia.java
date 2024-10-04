@@ -71,7 +71,7 @@ public class Compañia extends Thread{
     }
 
     public void totalUtilidades() {
-        this.utilidades = this.ganancias - this.costos;
+        this.utilidades =   this.costos -this.ganancias;
         System.out.println("compañiautilidades");
         System.out.println(utilidades);
     }

@@ -94,7 +94,7 @@ public class Main {
                     120000, fechaTope);
             // A partir de aca se llama a las interfaces
             MainInterface main = new MainInterface(apple, dell, cantidadInicialesApple, cantidadInicialesDell);
-            main.show();
+            main.setVisible(true);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -23,6 +23,8 @@ public class MainInterface extends javax.swing.JFrame {
 
     /**
      * Creates new form PruebaTabbed
+     * @param apple
+     * @param dell
      */
     public MainInterface(Compañia apple, Compañia dell, int[] cantidadesInicialesApple, int []cantidadesInicialesDell) {
         initComponents();
@@ -57,6 +59,7 @@ public class MainInterface extends javax.swing.JFrame {
         GraphManager grafico = new GraphManager(Grafico, apple, dell);
         System.out.println("NO SE7");
         apple.getProjectManager().setGrafico(grafico);
+        dell.getProjectManager().setGrafico(grafico);
         System.out.println("NO SE8");
 
         apple.startEmpleados();
@@ -203,24 +206,7 @@ public class MainInterface extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         AppleDash = new javax.swing.JPanel();
-        PlacasSavedLabel = new javax.swing.JLabel();
-        PlacasMaxLabel = new javax.swing.JLabel();
-        qttyPlacasMaxApple = new javax.swing.JLabel();
-        CPUSavedLabel = new javax.swing.JLabel();
-        qttyCPUSavedApple = new javax.swing.JLabel();
-        CPUMaxLabel = new javax.swing.JLabel();
-        qttyCPUMaxApple = new javax.swing.JLabel();
-        RAMSavedLabel = new javax.swing.JLabel();
-        qttyRAMSavedApple = new javax.swing.JLabel();
-        RAMMaxLabel2 = new javax.swing.JLabel();
-        qttyRAMMaxApple = new javax.swing.JLabel();
-        fuentesSavedLabel3 = new javax.swing.JLabel();
-        fuentesMaxLabel3 = new javax.swing.JLabel();
-        qttyFuentesMaxApple = new javax.swing.JLabel();
-        TGraficasSavedLabel4 = new javax.swing.JLabel();
-        qttyTGraficasSavedApple = new javax.swing.JLabel();
-        TGraficasMaxLabel4 = new javax.swing.JLabel();
-        qttyTGraficasMaxApple = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         faultsLabelText = new javax.swing.JLabel();
         faultsLabel = new javax.swing.JLabel();
@@ -269,6 +255,24 @@ public class MainInterface extends javax.swing.JFrame {
         computadorasTGReadyLabel = new javax.swing.JLabel();
         qttyPlacasSavedApple = new javax.swing.JLabel();
         qttyFuentesSavedApple = new javax.swing.JLabel();
+        PlacasSavedLabel = new javax.swing.JLabel();
+        fuentesSavedLabel3 = new javax.swing.JLabel();
+        PlacasMaxLabel = new javax.swing.JLabel();
+        qttyPlacasMaxApple = new javax.swing.JLabel();
+        CPUSavedLabel = new javax.swing.JLabel();
+        qttyCPUSavedApple = new javax.swing.JLabel();
+        CPUMaxLabel = new javax.swing.JLabel();
+        qttyCPUMaxApple = new javax.swing.JLabel();
+        RAMSavedLabel = new javax.swing.JLabel();
+        qttyRAMSavedApple = new javax.swing.JLabel();
+        RAMMaxLabel2 = new javax.swing.JLabel();
+        qttyRAMMaxApple = new javax.swing.JLabel();
+        fuentesMaxLabel3 = new javax.swing.JLabel();
+        qttyFuentesMaxApple = new javax.swing.JLabel();
+        TGraficasMaxLabel4 = new javax.swing.JLabel();
+        qttyTGraficasMaxApple = new javax.swing.JLabel();
+        TGraficasSavedLabel4 = new javax.swing.JLabel();
+        qttyTGraficasSavedApple = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         discountedLabelText = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -368,6 +372,8 @@ public class MainInterface extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jPanel14 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
         AppleVSDell = new javax.swing.JPanel();
         Grafico = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -921,7 +927,7 @@ public class MainInterface extends javax.swing.JFrame {
         jLabel18.setBackground(new java.awt.Color(0, 0, 0));
         jLabel18.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel18.setText("Configuracion");
+        jLabel18.setText("CONFIGURACIÓN");
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
@@ -944,67 +950,16 @@ public class MainInterface extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Configuracion.png"))); // NOI18N
         jLabel2.setText("jLabel2");
-        ConfigurationDashboard.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 600));
+        ConfigurationDashboard.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 600));
 
         jTabbedPane1.addTab("Dashboard", ConfigurationDashboard);
 
         AppleDash.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        PlacasSavedLabel.setText("Placas en el almacen");
-        AppleDash.add(PlacasSavedLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 270, -1, -1));
+        jLabel25.setToolTipText("");
+        AppleDash.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 490, -1, -1));
 
-        PlacasMaxLabel.setText("Capacidad Máx:");
-        AppleDash.add(PlacasMaxLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 270, -1, -1));
-
-        qttyPlacasMaxApple.setText("25");
-        AppleDash.add(qttyPlacasMaxApple, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 270, -1, -1));
-
-        CPUSavedLabel.setText("CPU en el almacen");
-        AppleDash.add(CPUSavedLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 320, -1, -1));
-
-        qttyCPUSavedApple.setText("0");
-        AppleDash.add(qttyCPUSavedApple, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 320, -1, -1));
-
-        CPUMaxLabel.setText("Capacidad Máx:");
-        AppleDash.add(CPUMaxLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 320, -1, -1));
-
-        qttyCPUMaxApple.setText("20");
-        AppleDash.add(qttyCPUMaxApple, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 320, -1, -1));
-
-        RAMSavedLabel.setText("RAM en el almacen");
-        AppleDash.add(RAMSavedLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 370, -1, -1));
-
-        qttyRAMSavedApple.setText("0");
-        AppleDash.add(qttyRAMSavedApple, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 370, -1, -1));
-
-        RAMMaxLabel2.setText("Capacidad Máx:");
-        AppleDash.add(RAMMaxLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 370, -1, -1));
-
-        qttyRAMMaxApple.setText("55");
-        AppleDash.add(qttyRAMMaxApple, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 370, -1, -1));
-
-        fuentesSavedLabel3.setText("Fuentes en el almacen");
-        AppleDash.add(fuentesSavedLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 420, -1, -1));
-
-        fuentesMaxLabel3.setText("Capacidad Máx:");
-        AppleDash.add(fuentesMaxLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 420, -1, -1));
-
-        qttyFuentesMaxApple.setText("35");
-        AppleDash.add(qttyFuentesMaxApple, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 420, -1, -1));
-
-        TGraficasSavedLabel4.setText("TG en el almacen");
-        AppleDash.add(TGraficasSavedLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 460, -1, -1));
-
-        qttyTGraficasSavedApple.setText("0");
-        AppleDash.add(qttyTGraficasSavedApple, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 460, -1, -1));
-
-        TGraficasMaxLabel4.setText("Capacidad Máx:");
-        AppleDash.add(TGraficasMaxLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 470, -1, -1));
-
-        qttyTGraficasMaxApple.setText("10");
-        AppleDash.add(qttyTGraficasMaxApple, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 470, -1, -1));
-
-        jPanel1.setBackground(new java.awt.Color(151, 151, 151));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         faultsLabelText.setText("Faltas del Project Manager:");
@@ -1202,77 +1157,134 @@ public class MainInterface extends javax.swing.JFrame {
         jPanel8.setBackground(new java.awt.Color(0, 0, 0));
 
         jLabel14.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel14.setFont(new java.awt.Font("Segoe UI Black", 3, 24)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("Trabajadores");
+        jLabel14.setText("TRABAJADORES");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap(104, Short.MAX_VALUE)
-                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(86, 86, 86))
+                .addContainerGap(90, Short.MAX_VALUE)
+                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(81, 81, 81))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel14)
-                .addGap(0, 20, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 50));
 
         AppleDash.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 380, 540));
 
-        jPanel2.setBackground(new java.awt.Color(183, 110, 121));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel4.setBackground(new java.awt.Color(185, 244, 255));
+        jPanel4.setBackground(new java.awt.Color(0, 0, 0));
 
-        jLabel13.setFont(new java.awt.Font("Segoe UI Black", 3, 24)); // NOI18N
-        jLabel13.setText("Almacen");
+        jLabel13.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("ALMACEN");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(112, 112, 112)
-                .addComponent(jLabel13)
-                .addContainerGap(112, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(116, Short.MAX_VALUE)
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(78, 78, 78))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel13)
-                .addGap(0, 20, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 50));
 
         computadorasReadyLabel.setText("Computadoras Standar Listas");
-        jPanel2.add(computadorasReadyLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
+        jPanel2.add(computadorasReadyLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
 
         qttyStandardComputadorasReadyApple.setText("0");
-        jPanel2.add(qttyStandardComputadorasReadyApple, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, -1, -1));
+        jPanel2.add(qttyStandardComputadorasReadyApple, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, -1, -1));
 
         qttyTGComputadorasReadyApple.setText("0");
-        jPanel2.add(qttyTGComputadorasReadyApple, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 10, -1));
+        jPanel2.add(qttyTGComputadorasReadyApple, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, 10, -1));
 
         computadorasTGReadyLabel.setText("Computadoras TG Listas");
-        jPanel2.add(computadorasTGReadyLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, -1));
+        jPanel2.add(computadorasTGReadyLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
 
         qttyPlacasSavedApple.setText("0");
         jPanel2.add(qttyPlacasSavedApple, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, -1, -1));
 
         qttyFuentesSavedApple.setText("0");
-        jPanel2.add(qttyFuentesSavedApple, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, -1, -1));
+        jPanel2.add(qttyFuentesSavedApple, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, -1, -1));
 
-        AppleDash.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 210, 330, 400));
+        PlacasSavedLabel.setText("Placas en el almacen");
+        jPanel2.add(PlacasSavedLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
-        jPanel3.setBackground(new java.awt.Color(102, 153, 255));
+        fuentesSavedLabel3.setText("Fuentes en el almacen");
+        jPanel2.add(fuentesSavedLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
+
+        PlacasMaxLabel.setText("Capacidad Máx:");
+        jPanel2.add(PlacasMaxLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, -1));
+
+        qttyPlacasMaxApple.setText("25");
+        jPanel2.add(qttyPlacasMaxApple, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, -1, -1));
+
+        CPUSavedLabel.setText("CPU en el almacen");
+        jPanel2.add(CPUSavedLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+
+        qttyCPUSavedApple.setText("0");
+        jPanel2.add(qttyCPUSavedApple, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, -1));
+
+        CPUMaxLabel.setText("Capacidad Máx:");
+        jPanel2.add(CPUMaxLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, -1, -1));
+
+        qttyCPUMaxApple.setText("20");
+        jPanel2.add(qttyCPUMaxApple, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, -1, -1));
+
+        RAMSavedLabel.setText("RAM en el almacen");
+        jPanel2.add(RAMSavedLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
+
+        qttyRAMSavedApple.setText("0");
+        jPanel2.add(qttyRAMSavedApple, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, -1, -1));
+
+        RAMMaxLabel2.setText("Capacidad Máx:");
+        jPanel2.add(RAMMaxLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, -1, -1));
+
+        qttyRAMMaxApple.setText("55");
+        jPanel2.add(qttyRAMMaxApple, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, -1, -1));
+
+        fuentesMaxLabel3.setText("Capacidad Máx:");
+        jPanel2.add(fuentesMaxLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, -1, -1));
+
+        qttyFuentesMaxApple.setText("35");
+        jPanel2.add(qttyFuentesMaxApple, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, -1, -1));
+
+        TGraficasMaxLabel4.setText("Capacidad Máx:");
+        jPanel2.add(TGraficasMaxLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, -1, -1));
+
+        qttyTGraficasMaxApple.setText("10");
+        jPanel2.add(qttyTGraficasMaxApple, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, -1, -1));
+
+        TGraficasSavedLabel4.setText("TG en el almacen");
+        jPanel2.add(TGraficasSavedLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
+
+        qttyTGraficasSavedApple.setText("0");
+        jPanel2.add(qttyTGraficasSavedApple, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, -1, -1));
+
+        AppleDash.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 30, 330, 400));
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         discountedLabelText.setText("Dinero Descontado al PM:");
@@ -1311,20 +1323,20 @@ public class MainInterface extends javax.swing.JFrame {
         discountedLabel.setText("0");
         jPanel3.add(discountedLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, -1, -1));
 
-        jPanel6.setBackground(new java.awt.Color(149, 47, 250));
+        jPanel6.setBackground(new java.awt.Color(0, 0, 0));
 
-        jLabel15.setFont(new java.awt.Font("Segoe UI Black", 3, 24)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("Estadisticas");
+        jLabel15.setText("ESTADISTICAS");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(56, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(36, Short.MAX_VALUE)
+                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1336,7 +1348,7 @@ public class MainInterface extends javax.swing.JFrame {
 
         jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, -1));
 
-        AppleDash.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 330, 260, 300));
+        AppleDash.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, 260, 300));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Fondo Apple.png"))); // NOI18N
         jLabel10.setText("jLabel10");
@@ -1347,7 +1359,7 @@ public class MainInterface extends javax.swing.JFrame {
         DellDash.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         DellDash.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, -50, -1, -1));
 
-        jPanel17.setBackground(new java.awt.Color(0, 102, 255));
+        jPanel17.setBackground(new java.awt.Color(0, 0, 0));
         jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         gananciaLabelText1.setBackground(new java.awt.Color(255, 255, 255));
@@ -1410,20 +1422,20 @@ public class MainInterface extends javax.swing.JFrame {
         diasTotalesLabelDell.setText("0");
         jPanel17.add(diasTotalesLabelDell, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, -1, -1));
 
-        jPanel18.setBackground(new java.awt.Color(185, 219, 253));
+        jPanel18.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel23.setBackground(new java.awt.Color(185, 219, 253));
-        jLabel23.setFont(new java.awt.Font("Segoe UI Black", 3, 24)); // NOI18N
-        jLabel23.setText("Estadisticas");
+        jLabel23.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel23.setText("ESTADISTICAS");
 
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
         jPanel18Layout.setHorizontalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel18Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                .addGap(16, 16, 16))
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1433,11 +1445,11 @@ public class MainInterface extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel17.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 198, 40));
+        jPanel17.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, 0, 220, 40));
 
-        DellDash.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 0, 220, 300));
+        DellDash.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 30, 220, 300));
 
-        jPanel15.setBackground(new java.awt.Color(0, 102, 255));
+        jPanel15.setBackground(new java.awt.Color(0, 0, 0));
         jPanel15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         qttyTGraficasMaxApple1.setBackground(new java.awt.Color(255, 255, 255));
@@ -1560,21 +1572,20 @@ public class MainInterface extends javax.swing.JFrame {
         TGraficasMaxLabelDell.setText("Capacidad Máx:");
         jPanel15.add(TGraficasMaxLabelDell, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, -1, -1));
 
-        jPanel16.setBackground(new java.awt.Color(153, 0, 255));
+        jPanel16.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel22.setBackground(new java.awt.Color(153, 0, 255));
-        jLabel22.setFont(new java.awt.Font("Segoe UI Black", 3, 24)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel22.setText("Almacen");
+        jLabel22.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel22.setText("ALMACEN");
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
         jPanel16Layout.setHorizontalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel16Layout.createSequentialGroup()
-                .addGap(98, 98, 98)
-                .addComponent(jLabel22)
-                .addContainerGap(116, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+                .addContainerGap(123, Short.MAX_VALUE)
+                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(118, 118, 118))
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1584,16 +1595,16 @@ public class MainInterface extends javax.swing.JFrame {
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        jPanel15.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 320, 50));
+        jPanel15.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 50));
         jPanel15.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, -1, -1));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/DellDash.png"))); // NOI18N
         jLabel11.setText("jLabel11");
         jPanel15.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(-630, 520, 2740, 1080));
 
-        DellDash.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 150, 370, 420));
+        DellDash.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 30, 370, 420));
 
-        jPanel13.setBackground(new java.awt.Color(0, 102, 204));
+        jPanel13.setBackground(new java.awt.Color(0, 0, 0));
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -1770,24 +1781,24 @@ public class MainInterface extends javax.swing.JFrame {
         jPanel14.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel20.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel20.setFont(new java.awt.Font("Segoe UI Black", 3, 24)); // NOI18N
-        jLabel20.setText("Trabajadores");
+        jLabel20.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel20.setText("TRABAJADORES");
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel14Layout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(79, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(80, 80, 80))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(14, 14, 14)
                 .addComponent(jLabel20)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
@@ -1833,10 +1844,13 @@ public class MainInterface extends javax.swing.JFrame {
                                     .addGap(131, 131, 131)
                                     .addComponent(qttyFuentesDell))
                                 .addGroup(jPanel13Layout.createSequentialGroup()
-                                    .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(TGraficaLabelDell)
-                                        .addComponent(ensambladorLabelDell))
-                                    .addGap(59, 59, 59)
+                                    .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addGroup(jPanel13Layout.createSequentialGroup()
+                                            .addComponent(ensambladorLabelDell)
+                                            .addGap(59, 59, 59))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel13Layout.createSequentialGroup()
+                                            .addComponent(TGraficaLabelDell)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                     .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(qttyEnsambladoresDell, javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
@@ -1864,14 +1878,13 @@ public class MainInterface extends javax.swing.JFrame {
                             .addGap(37, 37, 37)
                             .addComponent(qttyPlacasDell)
                             .addGap(23, 23, 23)
-                            .addComponent(addPlacaDell)))
-                    .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                            .addComponent(addPlacaDell))))
+                .addContainerGap(92, Short.MAX_VALUE))
+            .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
                 .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(46, 46, 46)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1908,7 +1921,8 @@ public class MainInterface extends javax.swing.JFrame {
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(qttyTGraficasDell)
                             .addComponent(addTGraficaDell)
-                            .addComponent(removeTGraficaDell))
+                            .addComponent(removeTGraficaDell)
+                            .addComponent(TGraficaLabelDell))
                         .addGap(34, 34, 34)
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(qttyEnsambladoresDell)
@@ -1917,9 +1931,7 @@ public class MainInterface extends javax.swing.JFrame {
                     .addGroup(jPanel13Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(fuenteLabelDell)
-                        .addGap(34, 34, 34)
-                        .addComponent(TGraficaLabelDell)
-                        .addGap(32, 32, 32)
+                        .addGap(83, 83, 83)
                         .addComponent(ensambladorLabelDell)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1943,6 +1955,11 @@ public class MainInterface extends javax.swing.JFrame {
         );
 
         DellDash.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 400, 540));
+        DellDash.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 100, -1, -1));
+
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/DellDash.png"))); // NOI18N
+        jLabel19.setText("jLabel19");
+        DellDash.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(-417, -150, 2010, 1200));
 
         jTabbedPane1.addTab("Dell", DellDash);
 
@@ -2555,14 +2572,17 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
