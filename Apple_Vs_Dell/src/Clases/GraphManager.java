@@ -38,15 +38,15 @@ public class GraphManager {
         this.apple = apple;
         this.dell = dell;
 
-        JFreeChart lineChart = ChartFactory.createXYLineChart("Utility VS Time", "Days", "Utility", getDataset(), PlotOrientation.VERTICAL, true, true, false);
+        JFreeChart lineChart = ChartFactory.createXYLineChart("Utilidades vs Tiempo", "Dias", "Utilidad", getDataset(), PlotOrientation.VERTICAL, true, true, false);
         ChartPanel chartpanel = new ChartPanel(lineChart);
         
         XYPlot plot = lineChart.getXYPlot();
 
         // Crear un renderizador de series personalizado (LineAndShapeRenderer para gráficos de líneas)
         XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
-        renderer.setSeriesPaint(0, Color.ORANGE);  // Serie 0 (Nickelodeon) en naranja
-        renderer.setSeriesPaint(1, Color.BLUE);    // Serie 1 (Disney) en azul
+        renderer.setSeriesPaint(0, Color.ORANGE);  // Serie 0 (Apple) en naranja
+        renderer.setSeriesPaint(1, Color.BLUE);    // Serie 1 (Dell) en azul
         renderer.setSeriesShapesVisible(0, true);  // Mostrar puntos para la serie 0
         renderer.setSeriesShapesVisible(1, true);  // Mostrar puntos para la serie 1
         renderer.setSeriesLinesVisible(0, true);    // Mostrar líneas para la serie 0

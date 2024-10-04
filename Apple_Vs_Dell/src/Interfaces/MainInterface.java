@@ -140,8 +140,6 @@ public class MainInterface extends javax.swing.JFrame {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         ConfigurationDashboard = new javax.swing.JPanel();
-        jPanel12 = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
         placasLabel1 = new javax.swing.JLabel();
         escenariosLabel1 = new javax.swing.JLabel();
         ramLabel1 = new javax.swing.JLabel();
@@ -205,6 +203,13 @@ public class MainInterface extends javax.swing.JFrame {
         jPanel19 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel27 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel28 = new javax.swing.JLabel();
         AppleDash = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -384,32 +389,6 @@ public class MainInterface extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         ConfigurationDashboard.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel12.setBackground(new java.awt.Color(51, 51, 51));
-
-        jLabel17.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel17.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel17.setText("APPLE VS DELL");
-
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
-                .addContainerGap(59, Short.MAX_VALUE)
-                .addComponent(jLabel17)
-                .addGap(54, 54, 54))
-        );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel17)
-                .addContainerGap(11, Short.MAX_VALUE))
-        );
-
-        ConfigurationDashboard.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 50, 390, 60));
 
         placasLabel1.setForeground(new java.awt.Color(204, 204, 204));
         placasLabel1.setText("Placas Base");
@@ -927,16 +906,16 @@ public class MainInterface extends javax.swing.JFrame {
         jLabel18.setBackground(new java.awt.Color(0, 0, 0));
         jLabel18.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel18.setText("CONFIGURACIÓN");
+        jLabel18.setText("Apple vs Dell");
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
         jPanel19Layout.setHorizontalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addGap(45, 45, 45)
                 .addComponent(jLabel18)
-                .addGap(33, 33, 33))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -946,11 +925,32 @@ public class MainInterface extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        ConfigurationDashboard.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 340, 60));
+        ConfigurationDashboard.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 340, 60));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Configuracion.png"))); // NOI18N
         jLabel2.setText("jLabel2");
         ConfigurationDashboard.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 600));
+
+        jLabel17.setText("jLabel17");
+        ConfigurationDashboard.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jLabel26.setText("jLabel26");
+        ConfigurationDashboard.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jButton1.setText("jButton1");
+        ConfigurationDashboard.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jLabel27.setText("jLabel27");
+        ConfigurationDashboard.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        ConfigurationDashboard.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jLabel28.setText("jLabel28");
+        ConfigurationDashboard.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 90));
 
         jTabbedPane1.addTab("Dashboard", ConfigurationDashboard);
 
@@ -1359,7 +1359,7 @@ public class MainInterface extends javax.swing.JFrame {
         DellDash.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         DellDash.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, -50, -1, -1));
 
-        jPanel17.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel17.setBackground(new java.awt.Color(0, 51, 153));
         jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         gananciaLabelText1.setBackground(new java.awt.Color(255, 255, 255));
@@ -1449,7 +1449,7 @@ public class MainInterface extends javax.swing.JFrame {
 
         DellDash.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 30, 220, 300));
 
-        jPanel15.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel15.setBackground(new java.awt.Color(0, 51, 153));
         jPanel15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         qttyTGraficasMaxApple1.setBackground(new java.awt.Color(255, 255, 255));
@@ -1604,7 +1604,8 @@ public class MainInterface extends javax.swing.JFrame {
 
         DellDash.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 30, 370, 420));
 
-        jPanel13.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel13.setBackground(new java.awt.Color(0, 51, 153));
+        jPanel13.setForeground(new java.awt.Color(153, 204, 255));
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -1978,13 +1979,13 @@ public class MainInterface extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        AppleVSDell.add(Grafico, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 710, 400));
+        AppleVSDell.add(Grafico, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 970, 520));
 
         jLabel9.setBackground(new java.awt.Color(0, 0, 0));
         jLabel9.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Dias totales transcurridos:");
-        AppleVSDell.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 40, -1, -1));
+        jLabel9.setText("Dias totales:");
+        AppleVSDell.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 40, -1, -1));
 
         daysPassedLabelGrafico.setBackground(new java.awt.Color(0, 0, 0));
         daysPassedLabelGrafico.setForeground(new java.awt.Color(255, 255, 255));
@@ -1993,7 +1994,7 @@ public class MainInterface extends javax.swing.JFrame {
         AppleVSDell.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
         jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Fondo Apple.png"))); // NOI18N
-        AppleVSDell.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1020, 600));
+        AppleVSDell.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1160, 600));
 
         jTabbedPane1.addTab("Grafico", AppleVSDell);
 
@@ -2565,6 +2566,7 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JLabel gananciaLabelText1;
     private javax.swing.JLabel gananciasLabel;
     private javax.swing.JLabel gananciasLabelDell;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2583,6 +2585,9 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -2593,7 +2598,6 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
@@ -2609,7 +2613,9 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel placasLabel;
     private javax.swing.JLabel placasLabel1;
     private javax.swing.JLabel placasLabel2;
